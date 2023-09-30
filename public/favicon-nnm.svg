@@ -1,0 +1,29 @@
+<svg width="512"
+     height="512"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+        <style type="text/css"><![CDATA[
+        .character {
+         stroke: dodgerblue;
+         stroke-width: 32;
+         stroke-linecap: round;
+         stroke-linejoin: round;
+         stroke-opacity: 1;
+         fill: none;
+       }
+    ]]></style>
+    </defs>
+
+    <path d="M 50 160 l 100 -100 l 100 100 l 100 -100 l 100 100"
+          class="character"
+    />
+
+    <path d="M 50 310 l 100 -100 l 100 100 l 100 -100"
+          class="character"
+    />
+
+    <path d="M 50 460 l 100 -100 l 100 100 l 100 -100"
+          class="character"
+    />
+</svg>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon-nnm.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lånekalkylator för Sverige</title>
+  </head>
+  
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  
+    <time style="display: none"
+          id="buildTimestamp"
+          datetime=""></time>
+
+    <script>
+      const element = document.getElementById("buildTimestamp");
+      const lastModifiedISO = new Date(document.lastModified).toISOString();
+      
+      element.innerText = lastModifiedISO;
+      element.setAttribute("datetime", lastModifiedISO);
+    </script>
+  
+  </body>
+</html>

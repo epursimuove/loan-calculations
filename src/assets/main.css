@@ -1,0 +1,53 @@
+@import './base.css';
+
+#app {
+  max-width: 1000px;
+  margin: 0 1rem;
+
+  font-weight: normal;
+  
+  --color-note: #666666;
+  --color-footer: #aaaaaa;
+}
+
+h1, h2 {
+  margin-top: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 200);
+}
+
+p, li {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
+
+
+.note {
+  font-size: 0.85rem;
+  color: var(--color-note);
+}
+
+.number {
+  font-family: Courier, monospace;
+}
+
+@media (hover: hover) {
+  a:hover {
+    /*background-color: hsla(160, 100%, 37%, 0.2);*/
+    color: rgb(100, 100, 255);
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  
+  h2 {
+    font-size: 1.1rem;
+  }
+}
