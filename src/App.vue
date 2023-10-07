@@ -12,6 +12,7 @@ import { Page } from "@/types/types";
 const loanDetails: Ref<LoanDetailsDto> = ref({
   useReferenceInterestRate: true,
   useTaxReduction: true,
+  useYear: true,
   amount: 1_500_000,
   referenceInterestRate: 4.5,
   interestRate: 5.75,

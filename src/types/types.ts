@@ -1,6 +1,7 @@
 export interface LoanDetailsDto {
   useReferenceInterestRate: boolean;
   useTaxReduction: boolean;
+  useYear: boolean;
   amount: number;
   referenceInterestRate: number;
   interestRate: number;

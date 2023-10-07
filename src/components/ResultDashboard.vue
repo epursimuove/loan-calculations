@@ -127,7 +127,7 @@ const displayWithSign = (value: number) => {
         <tr>
           <th></th>
           <th>Månad</th>
-          <th>År</th>
+          <th v-if="props.loanDetails.useYear">År</th>
         </tr>
 
         <tr
@@ -139,7 +139,7 @@ const displayWithSign = (value: number) => {
           <td class="number" data-test="result-one-percent-of-loan-per-month">
             {{ amountFormatter.format(yearToMonth(onePercentOfLoanPerYear)) }}
           </td>
-          <td class="number" data-test="result-one-percent-of-loan-per-year">
+          <td v-if="props.loanDetails.useYear" class="number" data-test="result-one-percent-of-loan-per-year">
             {{ amountFormatter.format(onePercentOfLoanPerYear) }}
           </td>
         </tr>
@@ -151,7 +151,7 @@ const displayWithSign = (value: number) => {
           <td class="number" data-test="result-installment-cost-per-month">
             {{ amountFormatter.format(yearToMonth(installmentCostPerYear)) }}
           </td>
-          <td class="number" data-test="result-installment-cost-per-year">
+          <td v-if="props.loanDetails.useYear" class="number" data-test="result-installment-cost-per-year">
             {{ amountFormatter.format(installmentCostPerYear) }}
           </td>
           <td class="number" data-test="result-installment-percent">
@@ -170,6 +170,7 @@ const displayWithSign = (value: number) => {
             {{ amountFormatter.format(yearToMonth(rateCostPerYear)) }}
           </td>
           <td
+              v-if="props.loanDetails.useYear"
             class="number important"
             data-test="result-interest-rate-per-year"
           >
@@ -192,6 +193,7 @@ const displayWithSign = (value: number) => {
             {{ amountFormatter.format(yearToMonth(referenceRateCostPerYear)) }}
           </td>
           <td
+              v-if="props.loanDetails.useYear"
             class="number"
             data-test="result-reference-interest-rate-per-year"
           >
@@ -209,7 +211,7 @@ const displayWithSign = (value: number) => {
           <td class="number important" data-test="result-total-cost-per-month">
             {{ amountFormatter.format(yearToMonth(totalCostPerYear)) }}
           </td>
-          <td class="number important" data-test="result-total-cost-per-year">
+          <td v-if="props.loanDetails.useYear" class="number important" data-test="result-total-cost-per-year">
             {{ amountFormatter.format(totalCostPerYear) }}
           </td>
           <td
@@ -234,6 +236,7 @@ const displayWithSign = (value: number) => {
             {{ displayWithSign(yearToMonth(yearDiffTotal)) }}
           </td>
           <td
+              v-if="props.loanDetails.useYear"
             class="number important"
             :class="plusMinusCss(yearDiffTotal)"
             data-test="result-delta-total-cost-per-year"
@@ -253,7 +256,7 @@ const displayWithSign = (value: number) => {
           <td class="number" data-test="result-tax-reduction-per-month">
             {{ displayWithSign(-yearToMonth(taxReductionPerYear)) }}
           </td>
-          <td class="number" data-test="result-tax-reduction-per-year">
+          <td v-if="props.loanDetails.useYear" class="number" data-test="result-tax-reduction-per-year">
             {{ displayWithSign(-taxReductionPerYear) }}
           </td>
           <td class="number" data-test="result-tax-reduction-percent">
@@ -278,6 +281,7 @@ const displayWithSign = (value: number) => {
             }}
           </td>
           <td
+              v-if="props.loanDetails.useYear"
             class="number important"
             data-test="result-reduced-interest-rate-per-year"
           >
@@ -313,6 +317,7 @@ const displayWithSign = (value: number) => {
             }}
           </td>
           <td
+              v-if="props.loanDetails.useYear"
             class="number"
             data-test="result-reduced-reference-interest-rate-per-year"
           >
@@ -347,6 +352,7 @@ const displayWithSign = (value: number) => {
             {{ amountFormatter.format(yearToMonth(minimumCostPerYear)) }}
           </td>
           <td
+              v-if="props.loanDetails.useYear"
             class="number important"
             data-test="result-minimum-total-cost-per-year"
           >
@@ -379,6 +385,7 @@ const displayWithSign = (value: number) => {
             {{ displayWithSign(yearToMonth(yearDiffMinimum)) }}
           </td>
           <td
+              v-if="props.loanDetails.useYear"
             class="number important"
             :class="plusMinusCss(yearDiffMinimum)"
             data-test="result-delta-minimum-total-cost-per-year"

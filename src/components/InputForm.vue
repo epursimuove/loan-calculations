@@ -66,6 +66,16 @@ watch(
       <label for="useTaxReduction" title="Räkna även ut skattereduktion">
         Skattereduktion
       </label>
+      
+      <input
+        id="useYear"
+        type="checkbox"
+        v-model="loanDetails.useYear"
+      />
+
+      <label for="useYear" title="Visa kostnader per år">
+        År
+      </label>
     </div>
 
     <div>
