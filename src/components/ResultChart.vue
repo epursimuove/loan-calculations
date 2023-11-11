@@ -1,13 +1,6 @@
 <script setup lang="ts">
 import { Chart } from "chart.js/auto";
-import {
-  computed,
-  type ComputedRef,
-  onMounted,
-  type Ref,
-  ref,
-  watch,
-} from "vue";
+import { computed, type ComputedRef, onMounted, watch } from "vue";
 import { type LoanDetailsDto } from "@/types/types";
 import {
   decimalOneFractionDigitFormatter,
@@ -30,8 +23,6 @@ import {
 const props = defineProps<{
   loanDetails: LoanDetailsDto;
 }>();
-
-const displayChart: Ref<boolean> = ref(true);
 
 const addReferenceInterestRate: ComputedRef<boolean> = computed(
   () => props.loanDetails.useReferenceInterestRate,
@@ -178,13 +169,7 @@ onMounted(() => {
 
 <template>
   <div id="chart-section">
-    <div>
-      <input id="displayChart" type="checkbox" v-model="displayChart" />
-
-      <label for="displayChart"> Visa diagram </label>
-    </div>
-
-    <div id="chart-container" v-show="displayChart">
+    <div id="chart-container" v-show="loanDetails.displayChart">
       <canvas id="chart-total-cost-different-interest-rates"> </canvas>
 
       <canvas id="chart-cash-vs-loan-for-different-prices"> </canvas>

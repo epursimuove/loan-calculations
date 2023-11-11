@@ -13,6 +13,7 @@ describe("ResultDashboard", () => {
           useReferenceInterestRate: true,
           useTaxReduction: true,
           useYear: true,
+          displayChart: true,
           amount: 1_500_000,
           loanInPercent: 75,
           interestRate: 5.5,

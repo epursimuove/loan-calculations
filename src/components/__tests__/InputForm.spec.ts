@@ -12,6 +12,7 @@ describe("InputForm", () => {
           useReferenceInterestRate: true,
           useTaxReduction: true,
           useYear: true,
+          displayChart: true,
           amount: 123_000_000,
           loanInPercent: 45,
           interestRate: 12.5,

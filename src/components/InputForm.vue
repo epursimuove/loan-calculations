@@ -43,39 +43,49 @@ watch(
 
 <template>
   <form>
-    <div class="one-liner">
-      <input
-        id="useReferenceInterestRate"
-        type="checkbox"
-        v-model="loanDetails.useReferenceInterestRate"
-      />
+    <div class="checkbox-section">
+      <div>
+        <input
+          id="useReferenceInterestRate"
+          type="checkbox"
+          v-model="loanDetails.useReferenceInterestRate"
+        />
 
-      <label
-        for="useReferenceInterestRate"
-        title="Använd referensräntan för att beräkna jämförelser"
-      >
-        Referensränta
-      </label>
+        <label
+          for="useReferenceInterestRate"
+          title="Använd referensräntan för att beräkna jämförelser"
+        >
+          Referensränta
+        </label>
+      </div>
 
-      <input
-        id="useTaxReduction"
-        type="checkbox"
-        v-model="loanDetails.useTaxReduction"
-      />
+      <div>
+        <input
+          id="useTaxReduction"
+          type="checkbox"
+          v-model="loanDetails.useTaxReduction"
+        />
 
-      <label for="useTaxReduction" title="Räkna även ut skattereduktion">
-        Skattereduktion
-      </label>
-      
-      <input
-        id="useYear"
-        type="checkbox"
-        v-model="loanDetails.useYear"
-      />
+        <label for="useTaxReduction" title="Räkna även ut skattereduktion">
+          Skattereduktion
+        </label>
+      </div>
 
-      <label for="useYear" title="Visa kostnader per år">
-        År
-      </label>
+      <div>
+        <input id="useYear" type="checkbox" v-model="loanDetails.useYear" />
+
+        <label for="useYear" title="Visa kostnader per år"> År </label>
+      </div>
+
+      <div>
+        <input
+          id="displayChart"
+          type="checkbox"
+          v-model="loanDetails.displayChart"
+        />
+
+        <label for="displayChart" title="Visa diagram"> Diagram </label>
+      </div>
     </div>
 
     <div>
@@ -152,7 +162,7 @@ watch(
 <style scoped>
 form {
   background-color: lightgoldenrodyellow;
-  border: 1px solid gray;
+  border: 1px solid rgb(128, 128, 128);
   border-radius: 0.5rem;
   padding: 1rem;
 
@@ -162,33 +172,45 @@ form {
 
   margin-top: 1rem;
   margin-bottom: 2rem;
-}
 
-form div {
-  /*margin: 1rem 0;*/
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  justify-content: flex-start;
-}
+  > div {
+    /*margin: 1rem 0;*/
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
 
-form div * {
-  flex: 0 0 auto;
-}
+  > div:not(.checkbox-section) {
+    display: grid;
+    grid-template-columns: 8rem 5rem auto;
+  }
 
-form div:not(.one-liner) label {
-  width: 8rem;
-}
+  @media (max-width: 450px) {
+    > .checkbox-section {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
-form div:not(.one-liner) input {
-  width: 5rem;
-}
+    > div:not(.checkbox-section) {
+      grid-template-columns: 5rem auto;
+      grid-row-gap: 0.2rem;
 
-form div.one-liner {
-  gap: 0.3rem;
-}
+      > label {
+        grid-column: 1 / -1;
+        grid-row: 1;
+      }
 
-form div.one-liner input:not(:first-child) {
-  margin-left: 2rem;
+      > input {
+        grid-column: 1 / 2;
+        grid-row: 2;
+      }
+
+      > span {
+        grid-column: 2 / -1;
+        grid-row: 2;
+      }
+    }
+  }
 }
 </style>

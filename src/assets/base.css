@@ -34,6 +34,8 @@
   --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 160px;
+  
+  --mobile-size: 600px;
 }
 
 *,
@@ -49,7 +51,7 @@ html, body, input {
   font-size: 16px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 650px) {
   html, body, input {
     font-size: 14px;
   }
