@@ -75,6 +75,10 @@ const handleMenuChoice = (page: Page) => {
           Ifall man lånar mer än 70 procent ska man
           <em>amortera</em> ytterligare 1 procent.
         </li>
+        <li>
+          Ifall lånebeloppet överstiger 4.5 gånger er bruttolön kan ni behöva
+          amortera ytterligare 1 procent.
+        </li>
       </ul>
 
       <h2>Regler skattereduktion</h2>
@@ -86,6 +90,13 @@ const handleMenuChoice = (page: Page) => {
           Man kan <em>eventuellt</em> få skattereduktion på maximalt 30 procent
           av räntekostnaden upp till 100 000 kr. Över detta belopp kan man
           <em>eventuellt</em> få skattereduktion på 21 procent.
+
+          <ul>
+            <li>
+              Observera att skattereduktionen av räntekostnaden i kalkylen är
+              beräknad med maximala 30 procent.
+            </li>
+          </ul>
         </li>
 
         <li>Amorteringen reduceras självklart inte.</li>
@@ -93,26 +104,14 @@ const handleMenuChoice = (page: Page) => {
 
       <h2>Övrigt</h2>
 
-      <p>Observera även följande:</p>
-
-      <ul>
-        <li>
-          Ifall lånebeloppet överstiger 4.5 gånger er bruttolön kan ni behöva
-          amortera ytterligare 1 procent.
-        </li>
-
-        <li>Belopp är avrundade till hela kronor.</li>
-
-        <li>
-          Skattereduktionen av räntekostnaden i kalkylen är beräknad med
-          maximala 30 procent.
-        </li>
-      </ul>
+      <p>Belopp är avrundade till hela kronor.</p>
 
       <p>
         Referensräntan används för att göra jämförelser. Den kan till exempel
         motsvara din nuvarande ränta, erbjuden ränta eller kalkylerad ränta.
       </p>
+
+      <h2>Om</h2>
 
       <p>
         Eftersom alla bolånekalkyler jag hittills sett har vissa brister, så

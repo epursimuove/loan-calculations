@@ -25,8 +25,8 @@ const installmentPercent = computed(() =>
   props.loanDetails.loanInPercent > 70
     ? 2
     : props.loanDetails.loanInPercent > 50
-    ? 1
-    : 0,
+      ? 1
+      : 0,
 );
 
 const installmentCostPerYear = computed(

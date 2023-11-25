@@ -31,25 +31,28 @@ const buildTimestamp: string =
     </div>
     <div>
       App built
-      <a href="https://anders.nemonisimors.com/currentTime">{{
-        buildTimestamp
-      }}</a>.
+      <a href="https://anders.nemonisimors.com/currentTime">
+        {{ buildTimestamp }}
+      </a>.
     </div>
     <div>
       <a href="https://github.com/epursimuove/loan-calculations">Source code</a> at GitHub.
     </div>
     <div>
-      Implemented with <a href="https://vuejs.org">Vue</a> <var>{{ version }}</var> and <a href="https://chartjs.org">Chart.js</a> <var>{{ Chart.version }}</var>
+      Implemented with <a href="https://vuejs.org">Vue</a> <var>{{ version }}</var>
+      and <a href="https://chartjs.org">Chart.js</a> <var>{{ Chart.version }}</var>
     </div>
     <div>
       Page loaded
-      <a href="https://anders.nemonisimors.com/currentTime">{{
-        loadedTimestamp
-      }}</a>.
+      <a href="https://anders.nemonisimors.com/currentTime">
+        {{ loadedTimestamp }}
+      </a
+      >.
     </div>
     <div>
       Copyright &copy; 2022-{{ currentYear }}
-      <a href="https://anders.nemonisimors.com">Anders Gustafson</a>. All rights reserved.
+      <a href="https://anders.nemonisimors.com">Anders Gustafson</a>.
+      All rights reserved.
     </div>
     <div>
       <a href="https://www.nemonisimors.com">
