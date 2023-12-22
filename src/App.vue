@@ -76,8 +76,7 @@ const handleMenuChoice = (page: Page) => {
           <em>amortera</em> ytterligare 1 procent.
         </li>
         <li>
-          Ifall lånebeloppet överstiger 4.5 gånger er bruttolön kan ni behöva
-          amortera ytterligare 1 procent.
+          Ifall lånebeloppet (för samtliga era lån) överstiger 4.5 gånger er (års)bruttolön kan ni behöva amortera ytterligare 1 procent.
         </li>
       </ul>
 
