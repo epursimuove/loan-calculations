@@ -121,7 +121,7 @@ const handleMenuChoice = (page: Page) => {
 
       <p>
         Kalkylatorn skapades i november 2022, är
-        <strong>reviderad i november 2023</strong>, och används självklart på
+        <strong>reviderad i januari 2024</strong>, och används självklart på
         egen risk. Som alltid, när det gäller analysverktyg och kalkylatorer som
         innehåller formulär, tabeller och diagram, så fungerar även denna bättre
         på större skärmstorlekar.
