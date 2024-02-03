@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import {computed, type ComputedRef, ref, watch} from "vue";
 import type { Ref } from "vue";
 import {
   amountFormatter,
@@ -21,6 +21,18 @@ const factorMSEK = 1e6;
 const amountInMSEK: Ref<number> = ref(props.loanDetails.amount / factorMSEK);
 
 const loanDetails: Ref<LoanDetailsDto> = ref(props.loanDetails);
+
+const validateLoanConfiguration:
+    ComputedRef<{ "out-of-bounds-warning": boolean }> =
+    computed(() => {
+      const validRange =
+          0 <= loanDetails.value.loanInPercent &&
+          loanDetails.value.loanInPercent <= 85;
+      
+      return {
+        "out-of-bounds-warning": !validRange
+      };
+    });
 
 // console.log('loanDetails.value', loanDetails.value);
 
@@ -122,13 +134,13 @@ watch(
       </span>
     </div>
 
-    <div>
+    <div :class="validateLoanConfiguration">
       <label for="loanInPercent">Lån %</label>
 
       <input
         id="loanInPercent"
         v-model.number="loanDetails.loanInPercent"
-        type="range"
+        type="number"
         step="5"
         min="0"
         max="85"
@@ -179,6 +191,13 @@ form {
     flex-direction: row;
     gap: 1.5rem;
     justify-content: flex-start;
+    
+    &.out-of-bounds-warning {
+      color: rgb(255, 0, 0);
+      > label::after, span::after {
+        content: " ❗️";
+      }
+    }
   }
 
   > div:not(.checkbox-section) {
