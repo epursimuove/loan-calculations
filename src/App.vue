@@ -15,8 +15,8 @@ const loanDetails: Ref<LoanDetailsDto> = ref({
   useYear: true,
   displayChart: true,
   amount: 1_500_000,
-  referenceInterestRate: 4.5,
-  interestRate: 5.75,
+  referenceInterestRate: 5.75,
+  interestRate: 4.5,
   loanInPercent: 85,
 });
 
@@ -121,7 +121,7 @@ const handleMenuChoice = (page: Page) => {
 
       <p>
         Kalkylatorn skapades i november 2022, är
-        <strong>reviderad i februari 2024</strong>, och används självklart på
+        <strong>reviderad i juli 2024</strong>, och används självklart på
         egen risk. Som alltid, när det gäller analysverktyg och kalkylatorer som
         innehåller formulär, tabeller och diagram, så fungerar även denna bättre
         på större skärmstorlekar.
