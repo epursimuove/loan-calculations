@@ -32,7 +32,9 @@ const buildTimestamp: string =
     <div>
       App built
       <a href="https://anders.nemonisimors.com/currentTime">
-        {{ buildTimestamp }}
+        <time>
+          {{ buildTimestamp }}
+        </time>
       </a>.
     </div>
     <div>
@@ -45,9 +47,10 @@ const buildTimestamp: string =
     <div>
       Page loaded
       <a href="https://anders.nemonisimors.com/currentTime">
-        {{ loadedTimestamp }}
-      </a
-      >.
+        <time>
+          {{ loadedTimestamp }}
+        </time>
+      </a>.
     </div>
     <div>
       Copyright &copy; 2022-{{ currentYear }}

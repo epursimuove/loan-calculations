@@ -13,7 +13,7 @@ describe("PageFooter", () => {
     });
 
     expect(appVersion).toMatch(/^1\.[0-9]\.\d$/);
-    expect(version).toMatch(/^3\.4\./);
+    expect(version).toMatch(/^3\.5\./);
 
     expect(wrapper.text()).toContain(`NNM Loan calculator ${appVersion}`);
     expect(wrapper.text()).toContain(`Vue ${version}`);
