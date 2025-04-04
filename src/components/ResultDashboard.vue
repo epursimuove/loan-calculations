@@ -98,6 +98,9 @@ const displayWithSign = (value: number) => {
           <td class="number" data-test="result-amount">
             {{ amountFormatter.format(props.loanDetails.amount) }}
           </td>
+          <td class="number">
+            {{ displayPercentage(100) }}
+          </td>
         </tr>
 
         <tr>
@@ -212,8 +215,10 @@ const displayWithSign = (value: number) => {
           </td>
         </tr>
 
-        <tr class="really">
-          <th title="Totalkostnad innan eventuell skattereduktion">
+        <tr class="really"
+            title="Totalkostnad INNAN eventuell skattereduktion"
+        >
+          <th>
             Totalkostnad
           </th>
           <td class="number important" data-test="result-total-cost-per-month">
@@ -236,8 +241,10 @@ const displayWithSign = (value: number) => {
           </td>
         </tr>
 
-        <tr v-if="props.loanDetails.useReferenceInterestRate">
-          <th title="Jämförelse mot referensräntans totalkostnad">
+        <tr v-if="props.loanDetails.useReferenceInterestRate"
+            title="Jämförelse mot referensräntans totalkostnad"
+        >
+          <th>
             &Delta; totalkostnad
           </th>
           <td
@@ -283,7 +290,7 @@ const displayWithSign = (value: number) => {
         <tr
           v-if="props.loanDetails.useTaxReduction"
           class="interest-rate-related"
-          title="Räntekostnad efter bästa möjliga skattereduktion"
+          title="Räntekostnad EFTER bästa möjliga skattereduktion"
         >
           <th>Reducerad ränta</th>
           <td
@@ -316,7 +323,7 @@ const displayWithSign = (value: number) => {
             props.loanDetails.useTaxReduction &&
             props.loanDetails.useReferenceInterestRate
           "
-          title="Referensräntekostnad efter bästa möjliga skattereduktion"
+          title="Referensräntekostnad EFTER bästa möjliga skattereduktion"
           class="reference-data"
         >
           <th>Reducerad ref.ränta</th>
@@ -358,7 +365,7 @@ const displayWithSign = (value: number) => {
         <tr
           v-if="props.loanDetails.useTaxReduction"
           class="really"
-          title="Totalkostnad efter bästa möjliga skattereduktion"
+          title="Totalkostnad EFTER bästa möjliga skattereduktion"
         >
           <th>Minsta kostnad</th>
           <td
@@ -389,8 +396,9 @@ const displayWithSign = (value: number) => {
             props.loanDetails.useTaxReduction &&
             props.loanDetails.useReferenceInterestRate
           "
+          title="Jämförelse mot referensräntans minsta kostnad"
         >
-          <th title="Jämförelse mot referensräntans minsta kostnad">
+          <th>
             &Delta; minsta kostnad
           </th>
           <td
@@ -432,6 +440,10 @@ tbody.divider {
 
 tr.divider {
   height: 1rem;
+}
+
+tr[title] {
+  cursor: help;
 }
 
 th {
